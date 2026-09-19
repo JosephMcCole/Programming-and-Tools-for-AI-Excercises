@@ -22,10 +22,10 @@ def cumsum(L):
     >>> cumsum((5, 5, 5))
     [5, 10, 15]
     """
-    X = []
+    result = []
     total = 0
-    for i in X:
+    for i in L:
         total += i
-        L.append(total)
-    return L    
+        result.append(total)
+    return result    
             

@@ -29,8 +29,10 @@ def hailstone_step(n):
     >>> hailstone_step(1)
     4
     """
-    return  # YOUR CODE HERE
-
+    if n % 2 == 0:
+        return n // 2
+    else:
+        return 3 * n + 1
 
 def reaches_one(n):
     """Return True if n is 1, that is, if the sequence is finished.
@@ -44,4 +46,4 @@ def reaches_one(n):
     >>> iterate(27, hailstone_step, reaches_one)
     1
     """
-    return  # YOUR CODE HERE
+    return  n == 1

@@ -23,17 +23,15 @@ def hailstones(n):
     112
     """
 
-    sequence=[]
+    sequence=[n]
     while n > 1:
         if n%2 == 0:
-            n = n/2
+            n = n//2#// forces interger division
         else:
             n = 3*n+1
         sequence.append(n)  
     return sequence
 
-x = hailstones(7)
-print(x)
 
 
 
@@ -57,17 +55,15 @@ def longest_hailstone(limit):
     #     count.append(longest_sequence)
     #     print(max(count))
     # for j in range(1,max(count)):
-    #     if j <= count[j]:
-    #         j = count[j[-1]]
-    #         print(j)
-    best_n,best_L = 1,1
+
+    best_n,best_l = 1,1
     for n in range(1,limit):
         longest_sequence = len(hailstones(n))
-        if longest_sequence > best_L:
-            best_n,best_L = n,longest_sequence
-    return(best_n,best_L)
+        if longest_sequence > best_l:
+            best_n,best_l = n,longest_sequence
+    return(best_n,best_l)
 
    
 
-y = longest_hailstone(10)
-print(y)
+# y = longest_hailstone(10)
+# print(y)

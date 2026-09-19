@@ -27,4 +27,8 @@ def rotate(s, k):
     >>> rotate("", 2)
     ''
     """
-    return  # YOUR CODE HERE
+    if len(s) == 0:
+        return s
+    else:
+        k = k % len(s)
+    return s[k:] + s[:k]
