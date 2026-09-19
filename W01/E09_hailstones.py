@@ -22,7 +22,20 @@ def hailstones(n):
     >>> len(hailstones(27))
     112
     """
-    return  
+
+    sequence=[]
+    while n > 1:
+        if n%2 == 0:
+            n = n/2
+        else:
+            n = 3*n+1
+        sequence.append(n)  
+    return sequence
+
+x = hailstones(7)
+print(x)
+
+
 
 
 def longest_hailstone(limit):
@@ -35,4 +48,26 @@ def longest_hailstone(limit):
     >>> longest_hailstone(1000)
     (871, 179)
     """
-    return  # YOUR CODE HERE
+
+    # largest_n = 0
+    # longest_sequence = 0
+    # count = []
+    # for n in range(0,limit):
+    #     longest_sequence = len(hailstones(n))+1
+    #     count.append(longest_sequence)
+    #     print(max(count))
+    # for j in range(1,max(count)):
+    #     if j <= count[j]:
+    #         j = count[j[-1]]
+    #         print(j)
+    best_n,best_L = 1,1
+    for n in range(1,limit):
+        longest_sequence = len(hailstones(n))
+        if longest_sequence > best_L:
+            best_n,best_L = n,longest_sequence
+    return(best_n,best_L)
+
+   
+
+y = longest_hailstone(10)
+print(y)
