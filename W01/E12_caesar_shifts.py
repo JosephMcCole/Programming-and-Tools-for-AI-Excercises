@@ -39,4 +39,10 @@ def all_shifts(s):
     >>> shifts[3][1]
     'hello'
     """
-    return  # YOUR CODE HERE
+    shiftedSequences = []
+    for x in range(26):
+        decodedValue = caesar(s,-x)
+        shiftedSequences.append((x,decodedValue))
+
+
+    return shiftedSequences

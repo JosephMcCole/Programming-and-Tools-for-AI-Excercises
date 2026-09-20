@@ -44,7 +44,11 @@ def english_score(text):
     >>> english_score("attack at dawn")
     8
     """
-    return  # YOUR CODE HERE
+    score = 0
+    for letter in text:
+        if letter.lower() in 'etaoin':
+            score+=1
+    return score
 
 
 def crack(s):
@@ -62,7 +66,19 @@ def crack(s):
     >>> crack("khoor zruog")
     'ebiil tloia'
     """
-    return  # YOUR CODE HERE
+    allShiftedValues = all_shifts(s)
+    bestScore = -1
+    bestGuess = ''
+
+    for valueNumberInShift, valueGuessInShift in allShiftedValues:
+        current_score = english_score(valueGuessInShift)
+        
+        if current_score > bestScore:
+            bestScore = current_score
+            bestGuess = valueGuessInShift
+
+    return bestGuess
+    
 
 
 # ANSWER: (the QUESTION is at the top of this file)
