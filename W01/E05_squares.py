@@ -18,4 +18,6 @@ def squares(n):
     >>> squares(0)
     []
     """
+    
+
     return [i**2 for i in range(1, n + 1)]

@@ -20,4 +20,8 @@ def count_vowels(s):
     >>> count_vowels("")
     0
     """
-    return sum(1 for c in s if c.lower() in "aeiou")
+    count = 0
+    for c in s:
+        if c.lower() in "aeiou":
+            count += 1
+    return count
