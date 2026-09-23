@@ -30,4 +30,7 @@ def get_or(d, key, default):
     >>> get_or({"ann": 0}, "ann", 99)
     0
     """
-    return  # YOUR CODE HERE
+    try:
+        return d[key]
+    except KeyError:
+        return default

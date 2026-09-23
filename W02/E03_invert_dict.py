@@ -31,7 +31,11 @@ def invert_dict(d):
     >>> invert_dict({"a": 1, "b": 1})
     {1: 'b'}
     """
-    return  # YOUR CODE HERE
+    newDict ={}
+    for firstKeyValue,secondKeyValue in d.items():
+        newDict[secondKeyValue] = firstKeyValue
+    return newDict
 
 
-# ANSWER: (the QUESTION is at the top of this file)
+# ANSWER: The value identifer being the first value in the dict is overwrittem by the second item in the dict 
+#as the value is the same and there cannot be two values that have the same identifer

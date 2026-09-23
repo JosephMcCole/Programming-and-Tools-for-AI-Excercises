@@ -30,4 +30,5 @@ def merge(d1, d2):
     >>> second
     {'a': 17, 'c': 3}
     """
-    return  # YOUR CODE HERE
+
+    return d1|d2 #the merge operator is used here
