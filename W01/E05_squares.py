@@ -18,6 +18,7 @@ def squares(n):
     >>> squares(0)
     []
     """
-    
-
-    return [i**2 for i in range(1, n + 1)]
+    newListOfSquares = []
+    for i in range(1, n + 1):
+        newListOfSquares.append(i**2)
+    return newListOfSquares

@@ -24,4 +24,9 @@ def group_by_first_letter(words):
     >>> group_by_first_letter(["one"])
     {'o': ['one']}
     """
-    return  # YOUR CODE HERE
+    d = defaultdict[list]
+
+    for word in words:
+        d[word[0]].append(word)
+
+    return dict(d)

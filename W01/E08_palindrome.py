@@ -24,5 +24,10 @@ def is_palindrome(s):
     >>> is_palindrome('abcba')
     True
     """
-    return s == s[::-1]
+    for i in s:
+        if s == "":
+            return True
+        else:
+            s[:i] == s[i:]
+            
     

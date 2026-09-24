@@ -22,8 +22,32 @@ def tally(xs):
     >>> tally("banana")
     {'b': 1, 'a': 3, 'n': 2}
     """
-    return  # YOUR CODE HERE
+    # UniqueItems = {}
+    # CountOfItems = []
+    # for item in xs:
+    #     for key, value in UniqueItems:
+    #         if key not in UniqueItems:
+    #            item = {key,value}
+    #            UniqueItems.update({item})
+    # return UniqueItems
+  
+    # item = 1
+    # for item in xs:
+    #     if item not in xs:
+    #         value = xs[item]
+    #         value += 1
+    #     else:
+    #         value = xs[item]
+    #         value = 1
+    
+    UniqueItems = {}
+    for item in xs: 
+        if item in UniqueItems: 
+            UniqueItems[item] += 1 
+        else: 
+            UniqueItems[item] = 1 
 
+    return UniqueItems
 
 def tally_counter(xs):
     """The same thing, in one line, using Counter (already imported above)
@@ -44,4 +68,4 @@ def tally_counter(xs):
     >>> tally_counter("banana")["z"]
     0
     """
-    return  # YOUR CODE HERE
+    return Counter(xs)
