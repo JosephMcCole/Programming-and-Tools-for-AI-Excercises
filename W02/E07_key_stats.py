@@ -71,7 +71,22 @@ def switch_rate(history):
     >>> switch_rate("")
     0.0
     """
-    return  
+
+    if len(history) < 2:
+        return 0.0
+    
+    lastLetter = history[0]
+    countOfSwitchs = 0
 
 
-# ANSWER: (the QUESTION is at the top of this file)
+    for letter in history:
+        if letter != lastLetter:
+            countOfSwitchs += 1
+            lastLetter = letter
+
+
+    return  countOfSwitchs/(len(history)-1)
+
+
+# ANSWER: I would expect the switch rate to be 50% or 0.5 as the 
+# chances it switchs is 50 % each time the letter changes

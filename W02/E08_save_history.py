@@ -34,8 +34,7 @@ def history_path(student_id):
     >>> history_path("12345678").parent.name
     'data'
     """
-    return  # YOUR CODE HERE
-
+    return DATA / f"history_{student_id}.txt"
 
 def save_history(history, student_id):
     """Append one session to this student's file, as a single line.
