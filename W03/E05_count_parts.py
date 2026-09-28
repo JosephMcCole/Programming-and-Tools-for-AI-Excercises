@@ -39,7 +39,13 @@ def count_parts(node):
     >>> count_parts(bicycle["children"][0]["children"][1])   # one spoke
     1
     """
-    return  # YOUR CODE HERE
+
+    if "children" not in node:
+        return 1
+    total = 0
+    for child in node["children"]:
+        total += child["qty"] * count_parts(child)
+    return total
 
 
 def deepest(node):
@@ -55,4 +61,6 @@ def deepest(node):
     >>> deepest(bicycle["children"][1])
     0
     """
-    return  # YOUR CODE HERE
+    if "children" not in node:
+        return 0
+    return 1 + max(deepest(child) for child in node["children"])

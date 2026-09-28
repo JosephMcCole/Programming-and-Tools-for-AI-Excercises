@@ -48,7 +48,10 @@ def save_history(history, student_id):
     ddff
     >>> history_path("testA").unlink()
     """
-    return  # YOUR CODE HERE
+    path = history_path(student_id)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a") as f:
+        f.write(f"{history}\n")
 
 
 def load_histories(student_id):
@@ -68,7 +71,14 @@ def load_histories(student_id):
     >>> load_histories("nobody_at_all")
     []
     """
-    return  # YOUR CODE HERE
+    path = history_path(student_id)
+    
+    if not path.exists():
+        return []
+        
+    with path.open("r") as f:
+        # readlines() keeps the newline character, so we use splitlines() or strip()
+        return [line.strip() for line in f]
 
 
 def total_keys(student_id):
@@ -83,4 +93,5 @@ def total_keys(student_id):
     >>> total_keys("nobody_at_all")
     0
     """
-    return  # YOUR CODE HERE
+    sessions = load_histories(student_id)
+    return sum(len(session) for session in sessions)

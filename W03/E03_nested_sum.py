@@ -27,4 +27,10 @@ def nested_sum(items):
     >>> nested_sum([[[[7]]]])
     7
     """
-    return  # YOUR CODE HERE
+    total = 0
+    for item in items:
+        if isinstance(item, list):#A built-in Python function that checks if an object belongs to a specified data type, here a list
+            total += nested_sum(item)#Recursively sum all numbers in an nested list 
+        else:
+            total += item
+    return total
