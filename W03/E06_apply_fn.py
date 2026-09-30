@@ -39,7 +39,7 @@ def apply_fn_to_list(fn, L):
     >>> apply_fn_to_list(len, [])
     []
     """
-    return  # YOUR CODE HERE
+    return [fn(x) for x in L]
 
 
 def apply_fn_to_list_gen(fn, g):
@@ -66,7 +66,8 @@ def apply_fn_to_list_gen(fn, g):
     >>> [next(squares) for _ in range(6)]
     [0, 1, 4, 9, 16, 25]
     """
-    return  # YOUR CODE HERE
+    for x in g:
+        yield fn(x)
 
 
 # Python has both of these built in, as `map`. It is the lazy one: `map` returns

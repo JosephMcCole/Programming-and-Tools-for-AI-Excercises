@@ -53,7 +53,7 @@ def part_paths(node, prefix=""):
     >>> part_paths(bicycle["children"][1])
     ['frame']
     """
-    return  # YOUR CODE HERE
+    return 
 
 
 def find_part(node, path):
