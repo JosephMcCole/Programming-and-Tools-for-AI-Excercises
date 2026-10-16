@@ -22,4 +22,5 @@ def first_last(L):
     >>> first_last("hello")
     ('h', 'o')
     """
-    return  (L[0],L[-1])
+    return  (L[0],L[-1])#return first index 0 as counting starts at zero in python
+                        #return second index -1 as last item in value entered starts count as -1

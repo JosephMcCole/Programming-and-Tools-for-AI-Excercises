@@ -18,7 +18,10 @@ def squares(n):
     >>> squares(0)
     []
     """
-    newListOfSquares = []
+    newListOfSquares = []#a list here as it will be appended to later to store the squares
+    #loop through numbers 1 to n 
+    #When the squares function calls squares(0) the range is (1,1) so the list is empty and does not run
     for i in range(1, n + 1):
+        #adding the i**2 squared notation to the list of squares
         newListOfSquares.append(i**2)
     return newListOfSquares

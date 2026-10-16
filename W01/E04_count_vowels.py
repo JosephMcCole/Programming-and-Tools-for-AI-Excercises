@@ -20,8 +20,9 @@ def count_vowels(s):
     >>> count_vowels("")
     0
     """
-    count = 0
-    for c in s:
+    count = 0#declare a count variable 
+    for c in s:#a for loop to iterate over the input
         if c.lower() in "aeiou":
-            count += 1
-    return count
+            #use .lower function to allow for the if statement to account for capital letters
+            count += 1#add to count 1 if the above c variable is in aeiou
+    return count#return the total number of vowels

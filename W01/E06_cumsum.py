@@ -22,10 +22,11 @@ def cumsum(L):
     >>> cumsum((5, 5, 5))
     [5, 10, 15]
     """
-    result = []
-    total = 0
-    for i in L:
-        total += i
+    result = []#adding a result list to add the total to
+    total = 0#declaring variable total and starting it at 0 to allow use in the for loop
+    for i in L:#iterating over the input L
+        total += i#adding each item in L to the total
+        #in this stage of the for loop the current value of total is added to the result list
         result.append(total)
     return result    
             
