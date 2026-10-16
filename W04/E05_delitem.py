@@ -116,7 +116,13 @@ class SimpleDict:
         >>> 3 in d
         False
         """
-        return  # YOUR CODE HERE
+        bucket = self._bucket(key)
+        for i, (k, v) in enumerate(bucket):
+            if k == key:
+                del bucket[i]
+                self.n -= 1
+                return
+        raise KeyError(key)
 
 
 # Deleting is easy here only because each bucket is its own list: take the

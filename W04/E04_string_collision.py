@@ -52,7 +52,15 @@ def find_collision(words, capacity):
     >>> find_collision([], 8) is None
     True
     """
-    return  # YOUR CODE HERE
+    seen = {}
+    for word in words:
+        idx = bucket_index(word, capacity)
+        if idx in seen:
+            if seen[idx] != word:
+                return (seen[idx], word)
+        else:
+            seen[idx] = word
+    return None
 
 
 if __name__ == "__main__":

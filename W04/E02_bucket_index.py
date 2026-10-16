@@ -35,8 +35,7 @@ def bucket_index(key, capacity):
     Note `bucket_index(11, 8)` and `bucket_index(11, 16)` differ. That is why
     growing a table means re-filing every pair, and not just copying them.
     """
-    return  # YOUR CODE HERE
-
+    return hash(key) % capacity
 
 # Note `%` never returns a negative number in Python, even for a negative
 # left-hand side, which is exactly what we need for a list index. (One oddity

@@ -143,7 +143,10 @@ class SimpleDict:
         >>> all((p in slow) == (p in fast) for p in probe)
         True
         """
-        return  # YOUR CODE HERE
+        for k, v in self._bucket(key):
+                if k == key:
+                    return True
+        return False
 
 
 # Given: the measuring. You do not have to understand it, but the comments say

@@ -36,7 +36,8 @@ def load_bom(filename):
     >>> round(unit_total(bom, key="cost"), 2)
     279.6
     """
-    return  # YOUR CODE HERE
+    with open(DATA / filename, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def repriced(node, material, factor):
@@ -60,7 +61,15 @@ def repriced(node, material, factor):
     >>> round(unit_total(bom, key="cost"), 2)
     279.6
     """
-    return  # YOUR CODE HERE
+    new_node = dict(node)
+    if "children" not in node:
+        if new_node.get("material") == material:
+            new_node["cost"] = new_node["cost"] * factor
+    else:
+        new_node["children"] = [
+            repriced(c, material, factor) for c in node["children"]
+        ]
+    return new_node
 
 
 def save_bom(bom, path):
@@ -84,4 +93,5 @@ def save_bom(bom, path):
     >>> round(unit_total(reloaded, key="cost"), 2)
     295.46
     """
-    return  # YOUR CODE HERE
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(bom, f, indent=4)

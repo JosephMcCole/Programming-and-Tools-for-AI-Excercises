@@ -45,7 +45,11 @@ def is_hashable(x):
     >>> is_hashable((1, [2, 3]))
     False
     """
-    return  # YOUR CODE HERE
+    try:
+        hash(x)
+        return True
+    except TypeError:
+        return False
 
 
 # ANSWER: (the QUESTION is at the top of this file)

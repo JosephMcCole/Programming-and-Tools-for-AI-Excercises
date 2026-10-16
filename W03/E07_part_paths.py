@@ -53,7 +53,15 @@ def part_paths(node, prefix=""):
     >>> part_paths(bicycle["children"][1])
     ['frame']
     """
-    return 
+    current_path = f"{prefix}/{node['name']}" if prefix else node["name"]
+
+    if "children" not in node:
+        return [current_path]
+
+    paths = []
+    for child in node["children"]:
+        paths.extend(part_paths(child, current_path))
+    return paths
 
 
 def find_part(node, path):
@@ -70,4 +78,16 @@ def find_part(node, path):
         ...
     KeyError: 'bicycle/wheel/axle'
     """
-    return  # YOUR CODE HERE
+    if path == node["name"]:
+        return node
+
+    prefix = node["name"] + "/"
+    if path.startswith(prefix) and "children" in node:
+        remaining_path = path[len(prefix):]
+        for child in node["children"]:
+            try:
+                return find_part(child, remaining_path)
+            except KeyError:
+                pass
+
+    raise KeyError(path)
