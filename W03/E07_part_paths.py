@@ -53,11 +53,18 @@ def part_paths(node, prefix=""):
     >>> part_paths(bicycle["children"][1])
     ['frame']
     """
+    #the following line takes the following expression 
+    #<value_if_true> if <condition> else <value_if_false>
+    #so the current path is the prefix followed by the node[name] but id the
+    #prefix exists it is just node[name]
     current_path = f"{prefix}/{node['name']}" if prefix else node["name"]
 
+    #the following assigns the current path to the return statement
+    #if there are no children of the node
     if "children" not in node:
         return [current_path]
-
+    #pass the accumulated current_path downward to all descendants,
+    #then flatten the resulting lists using extend().
     paths = []
     for child in node["children"]:
         paths.extend(part_paths(child, current_path))
@@ -78,16 +85,22 @@ def find_part(node, path):
         ...
     KeyError: 'bicycle/wheel/axle'
     """
+    #if the path = node[name] equates to true return the node
     if path == node["name"]:
         return node
 
+
     prefix = node["name"] + "/"
     if path.startswith(prefix) and "children" in node:
+        #strip the current node name and separator to pass only the sub-path downward.
         remaining_path = path[len(prefix):]
+        #traverse direct children to search for the remaining path segment.
         for child in node["children"]:
             try:
+                #if a child branch finds the node, return it.
                 return find_part(child, remaining_path)
             except KeyError:
+                #if the child did not have it continue to the next child
                 pass
-
+                
     raise KeyError(path)

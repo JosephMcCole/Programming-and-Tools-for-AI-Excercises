@@ -28,9 +28,12 @@ def flatten(items):
     """
     result = []
     for item in items:
+        #identifies if the item in items is a list or not
         if isinstance(item, list):
+            #here the list is dissolved by the extend flatten functionality
             result.extend(flatten(item))
         else:
+            #if the item is not a list it appends it
             result.append(item)
 
     return result  

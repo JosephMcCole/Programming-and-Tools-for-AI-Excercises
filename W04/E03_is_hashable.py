@@ -52,4 +52,6 @@ def is_hashable(x):
         return False
 
 
-# ANSWER: (the QUESTION is at the top of this file)
+#given the contents of a list can change and are supposed to the hashing of values
+#will create problems as they are hashed in their current state at the time of hashing
+#a tuple however cannot change and therfore can be hashed if its contents are hashable

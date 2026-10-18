@@ -27,6 +27,7 @@ def sort_by_mass(pairs):
     >>> parts
     [('frame', 2200), ('spoke', 5)]
     """
+    #return the sorted pairs ascending with the key lambda and for each item with its item value
     return sorted(pairs, key=lambda item: item[1])
 
 def heaviest(pairs):
@@ -42,4 +43,4 @@ def heaviest(pairs):
     return max(pairs, key=lambda item: item[1])[0]#trailing 0 just removes the value from the return value
 
 
-# ANSWER: (the QUESTION is at the top of this file)
+# the list.sort method sorts the list and returns none by design

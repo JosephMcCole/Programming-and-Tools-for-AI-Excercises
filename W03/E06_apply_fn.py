@@ -39,6 +39,8 @@ def apply_fn_to_list(fn, L):
     >>> apply_fn_to_list(len, [])
     []
     """
+    #return a list with fn(x) for each x in L
+    #this runs a given function for each item in L
     return [fn(x) for x in L]
 
 
@@ -82,4 +84,7 @@ def apply_fn_to_list_gen(fn, g):
 # keep `map` for the lazy one.
 
 
-# ANSWER: (the QUESTION is at the top of this file)
+#the first function is a list which tries to complete the list in memory.
+#Using the  naturals function the loop can never finish so the memory will run out.
+#The second function is a generator which does not commit to memory all at once so it 
+#safely handles the infinite loop

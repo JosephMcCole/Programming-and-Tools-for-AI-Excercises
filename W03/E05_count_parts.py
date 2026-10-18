@@ -39,10 +39,11 @@ def count_parts(node):
     >>> count_parts(bicycle["children"][0]["children"][1])   # one spoke
     1
     """
-
+    #if leaf node has no subcomponents it represents 1 part
     if "children" not in node:
         return 1
     total = 0
+    #multiply each child's quantity by the total count of parts inside that child.
     for child in node["children"]:
         total += child["qty"] * count_parts(child)
     return total
@@ -61,6 +62,8 @@ def deepest(node):
     >>> deepest(bicycle["children"][1])
     0
     """
+    #if its depth is zero return zero
     if "children" not in node:
         return 0
+    #Find the maximum depth among all children and add 1 for the current level.
     return 1 + max(deepest(child) for child in node["children"])

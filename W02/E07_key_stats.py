@@ -38,11 +38,15 @@ def longest_run(history):
     topScore = 0
     lastLetter = ''
     for letter in history:
+        #if the letter is equal lastletter increment the count 
+        #overwise start the count at 1
         if letter == lastLetter:
              count += 1
         else:
              count = 1
+        #assign the lastg letter to be the new letter at thsi point in the for loop
         lastLetter = letter
+        #if the count is greater than top score then assign the topscore to be the count
         if count > topScore:
              topScore = count
     return topScore
@@ -72,6 +76,7 @@ def switch_rate(history):
     0.0
     """
 
+    #handling less than 2 length values
     if len(history) < 2:
         return 0.0
     
@@ -80,11 +85,12 @@ def switch_rate(history):
 
 
     for letter in history:
+        #detect a change in the history of history in the for loop and increment the count of switch
         if letter != lastLetter:
             countOfSwitchs += 1
             lastLetter = letter
 
-
+    #returning the count divided by the length of history -1 as it is the total possibel transition value
     return  countOfSwitchs/(len(history)-1)
 
 
