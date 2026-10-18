@@ -32,7 +32,7 @@ def invert_dict(d):
     {1: 'b'}
     """
     newDict ={}
-    for firstKeyValue,secondKeyValue in d.items():
+    for firstKeyValue,secondKeyValue in d.items():#d.items as d is a dict
         newDict[secondKeyValue] = firstKeyValue
     return newDict
 

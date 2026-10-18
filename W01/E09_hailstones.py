@@ -23,13 +23,13 @@ def hailstones(n):
     112
     """
 
-    sequence=[n]
+    sequence=[n]#storing the first number entered into the return value sequence
     while n > 1:
-        if n%2 == 0:
-            n = n//2#// forces interger division
+        if n%2 == 0:#if the n modulous 2 is 0 so ture
+            n = n//2# divide n by 2, // forces interger division
         else:
-            n = 3*n+1
-        sequence.append(n)  
+            n = 3*n+1#else do 3 times n plus 1
+        sequence.append(n) #add n to hailstone sequence
     return sequence
 
 
@@ -56,12 +56,17 @@ def longest_hailstone(limit):
     #     print(max(count))
     # for j in range(1,max(count)):
 
-    best_n,best_l = 1,1
+    best_n,best_l = 1,1#double assignment of variables on one line, both to 1
     for n in range(1,limit):
+        #generating the longest sequence for n and measuring its length
         longest_sequence = len(hailstones(n))
+        #on this step in the for loop the longest sequence if better than best_l
+        #is then assigned to best_l 
         if longest_sequence > best_l:
+        #if the best_l and best_n here are the longest in the sequence, then
+        #update the best n and best l to the winning numbers
             best_n,best_l = n,longest_sequence
-    return(best_n,best_l)
+    return(best_n,best_l)#returning here as a tuple
 
    
 

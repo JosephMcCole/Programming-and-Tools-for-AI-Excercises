@@ -42,8 +42,10 @@ def tally(xs):
     
     UniqueItems = {}
     for item in xs: 
+        #if the item has been seen add 1 to it
         if item in UniqueItems: 
             UniqueItems[item] += 1 
+        #if the item has not been seen set it to one
         else: 
             UniqueItems[item] = 1 
 

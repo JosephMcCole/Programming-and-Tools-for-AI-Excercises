@@ -27,8 +27,12 @@ def rotate(s, k):
     >>> rotate("", 2)
     ''
     """
+    #using check for zero value logic here and just returning the empty value if it is empty
     if len(s) == 0:
         return s
     else:
+        #assignment of k to be the remainder of k divided by the length of s
+        #this is done as to slice the list/string at a value of k in the return
+        #statement
         k = k % len(s)
-    return s[k:] + s[:k]
+    return s[k:] + s[:k]#returning the sliced values added together

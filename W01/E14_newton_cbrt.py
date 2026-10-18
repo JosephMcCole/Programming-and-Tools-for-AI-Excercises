@@ -37,9 +37,10 @@ def newton_cbrt(x, tol=1e-10):
     >>> round(newton_cbrt(-8), 6)
     -2.0
     """
+    #function to return the update step
     def transform(g):
         return (2 * g + x / (g * g)) / 3
-
+    #stopping condition 
     def done(g):
         return abs(g ** 3 - x) < tol
 

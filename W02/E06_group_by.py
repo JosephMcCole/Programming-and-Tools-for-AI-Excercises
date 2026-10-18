@@ -24,9 +24,10 @@ def group_by_first_letter(words):
     >>> group_by_first_letter(["one"])
     {'o': ['one']}
     """
-    d = defaultdict[list]
+    d = defaultdict(list)
 
     for word in words:
+        #index zero gets the first character adn appends it to d
         d[word[0]].append(word)
 
-    return dict(d)
+    return dict(d)#returning the defaultdict back as a regular dict

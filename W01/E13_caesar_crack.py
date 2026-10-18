@@ -46,8 +46,9 @@ def english_score(text):
     """
     score = 0
     for letter in text:
+        #finding out if the letter in text is in etaoin at thsi stage of the for loop
         if letter.lower() in 'etaoin':
-            score+=1
+            score+=1#adding to score if the letter is present
     return score
 
 
@@ -66,13 +67,13 @@ def crack(s):
     >>> crack("khoor zruog")
     'ebiil tloia'
     """
-    allShiftedValues = all_shifts(s)
-    bestScore = -1
+    allShiftedValues = all_shifts(s)#give every possible value of s shifted
+    bestScore = -1#starting at -1 as to overwite the score on first iteration
     bestGuess = ''
 
     for valueNumberInShift, valueGuessInShift in allShiftedValues:
-        current_score = english_score(valueGuessInShift)
-        
+        current_score = english_score(valueGuessInShift)#scoring each valueGuessInShift in for loop
+        #if the score below is better than the last then assign the values 
         if current_score > bestScore:
             bestScore = current_score
             bestGuess = valueGuessInShift
@@ -81,4 +82,5 @@ def crack(s):
     
 
 
-# ANSWER: (the QUESTION is at the top of this file)
+# Crack fails on Khoor zruog as the code requires letter frequency to be higher to allow
+#the most common letters functionality to work.

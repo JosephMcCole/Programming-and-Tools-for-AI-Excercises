@@ -39,10 +39,10 @@ def all_shifts(s):
     >>> shifts[3][1]
     'hello'
     """
-    shiftedSequences = []
+    shiftedSequences = []#declaring a list to allow for shifted values to be stored
     for x in range(26):
+        #using the above function with s and -x
+        #-x as to recover with shifted x would be
         decodedValue = caesar(s,-x)
         shiftedSequences.append((x,decodedValue))
-
-
     return shiftedSequences

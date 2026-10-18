@@ -23,8 +23,10 @@ def product(L):
     24
     """
     total = 1
+    #setting the inital value to be 1 since it a multiplication value it cant be zero and 
+    #so an empty list will return 1
     for item in L:
-        total *= item
+        total *= item # for each item in L each item is multiplied by total and then the next value
     return total
 
 

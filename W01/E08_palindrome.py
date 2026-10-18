@@ -24,10 +24,14 @@ def is_palindrome(s):
     >>> is_palindrome('abcba')
     True
     """
+
+    
     for i in s:
         if s == "":
-            return True
+            return True#for empty lists
         else:
             s[:i] == s[i:]
+            #for each item in s from start to i if it equates to each item in s from i to end
+            #the double equals returns true
             
     

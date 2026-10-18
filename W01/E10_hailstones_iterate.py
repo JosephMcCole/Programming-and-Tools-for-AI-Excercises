@@ -29,6 +29,9 @@ def hailstone_step(n):
     >>> hailstone_step(1)
     4
     """
+
+    #in the following code the hailstone sequence is just ran once
+    #returning the value of the nest step in the sequence
     if n % 2 == 0:
         return n // 2
     else:
@@ -46,4 +49,5 @@ def reaches_one(n):
     >>> iterate(27, hailstone_step, reaches_one)
     1
     """
-    return  n == 1
+    return  n == 1#double equals assigns true/false to the statement 
+                  #so when n == 1 returns true anything else will return false
