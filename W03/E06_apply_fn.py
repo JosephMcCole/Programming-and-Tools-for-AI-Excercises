@@ -40,7 +40,7 @@ def apply_fn_to_list(fn, L):
     []
     """
     #return a list with fn(x) for each x in L
-    #this runs a given function for each item in L
+    #this runs a given function on each item in L
     return [fn(x) for x in L]
 
 

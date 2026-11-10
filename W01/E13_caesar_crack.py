@@ -82,5 +82,5 @@ def crack(s):
     
 
 
-# Crack fails on Khoor zruog as the code requires letter frequency to be higher to allow
+# Crack fails on Khoor zruog as the code requires letter frequency with the letters assigned to be higher to allow
 #the most common letters functionality to work.

@@ -119,9 +119,9 @@ class SimpleDict:
         bucket = self._bucket(key)
         for i, (k, v) in enumerate(bucket):
             if k == key:
-                del bucket[i]
-                self.n -= 1
-                return
+                del bucket[i]#deleting the item 
+                self.n -= 1#decrementing the value
+                return#stop once the item is deleted
         raise KeyError(key)
 
 

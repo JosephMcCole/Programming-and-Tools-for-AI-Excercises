@@ -52,13 +52,19 @@ def find_collision(words, capacity):
     >>> find_collision([], 8) is None
     True
     """
+    #to track the seen values a dict will be used 
     seen = {}
+
     for word in words:
+        #find what value is in the bucket
         idx = bucket_index(word, capacity)
+        #check if another word is in this bucket
         if idx in seen:
+            #ensure nonduplicate words
             if seen[idx] != word:
                 return (seen[idx], word)
         else:
+            #first time seeing this bucket index then record the word 
             seen[idx] = word
     return None
 

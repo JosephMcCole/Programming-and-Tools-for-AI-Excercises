@@ -26,12 +26,12 @@ def is_palindrome(s):
     """
 
     
-    for i in s:
-        if s == "":
-            return True#for empty lists
-        else:
-            s[:i] == s[i:]
-            #for each item in s from start to i if it equates to each item in s from i to end
-            #the double equals returns true
+    # for i in s:
+    #     if s == "":
+    #         return True#for empty lists
+    #     else:
+    #         s[:i] == s[i:]
+    
+    return s == s[::-1]
             
     

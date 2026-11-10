@@ -143,7 +143,9 @@ class SimpleDict:
         >>> all((p in slow) == (p in fast) for p in probe)
         True
         """
+        #locate the bucket and iterate over it 
         for k, v in self._bucket(key):
+            #if the k == key then true otherwise return false
                 if k == key:
                     return True
         return False
