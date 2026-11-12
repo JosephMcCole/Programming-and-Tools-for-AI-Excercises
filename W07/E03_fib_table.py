@@ -18,7 +18,10 @@ def fib_table(n):
     >>> fib_table(35)
     9227465
     """
-    return  # YOUR CODE HERE
+    table = [0, 1]
+    for _ in range(2, n + 1):
+        table.append(table[-1] + table[-2])
+    return table[n]
 
 
 def fib_pair(n):
@@ -31,7 +34,10 @@ def fib_pair(n):
     >>> all(fib_pair(i) == fib_table(i) for i in range(50))
     True
     """
-    return  # YOUR CODE HERE
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
 
 
 # `fib_table` holds n numbers to return one. `fib_pair` holds two. This is the

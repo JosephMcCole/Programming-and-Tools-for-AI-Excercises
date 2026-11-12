@@ -22,7 +22,11 @@ def hamming(a, b):
     >>> hamming("ACGTACGTAC", "CGTACGTACA")
     10
     """
-    return  # YOUR CODE HERE
+    sentinel = object()
+    return sum(
+        1 for x, y in zip_longest(a, b, fillvalue=sentinel)
+        if x is not sentinel and y is not sentinel and x != y
+    )
 
 
 def hamming_padded(a, b):
@@ -37,7 +41,7 @@ def hamming_padded(a, b):
     >>> hamming_padded("abc", "")
     3
     """
-    return  # YOUR CODE HERE
+    return sum(x != y for x, y in zip_longest(a, b, fillvalue=object()))
 
 
 # `zip` stops at the shorter of the two, so `hamming` silently ignores

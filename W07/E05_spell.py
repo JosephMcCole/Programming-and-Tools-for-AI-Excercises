@@ -35,7 +35,7 @@ def suggest(word, words, n=3):
     >>> suggest("cat", [])
     []
     """
-    return  # YOUR CODE HERE
+    return sorted(words, key=lambda w: levenshtein(word, w))[:n]
 
 
 # ANSWER: (the QUESTION is at the top of this file)

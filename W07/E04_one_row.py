@@ -39,4 +39,15 @@ def levenshtein_row(a, b):
     >>> all(levenshtein_row(a, b) == levenshtein(a, b) for a, b in pairs)
     True
     """
-    return  # YOUR CODE HERE
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, start=1):
+        curr = [i] + [0] * len(b)
+        for j, cb in enumerate(b, start=1):
+            cost = 0 if ca == cb else 1
+            curr[j] = min(
+                prev[j] + 1,        # deletion
+                curr[j - 1] + 1,    # insertion
+                prev[j - 1] + cost  # substitution / match
+            )
+        prev = curr
+    return prev[-1]
