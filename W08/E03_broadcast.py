@@ -40,7 +40,7 @@ def combine(A, b, c, d):
     array([[  2.,   3., 104.],
            [ 15.,  16., 117.]])
     """
-    return  # YOUR CODE HERE
+    return A + b[:, np.newaxis] + c + d
 
 
 def times_table(n):
@@ -55,7 +55,7 @@ def times_table(n):
     >>> print(times_table(5)[4, 4])
     25
     """
-    return  # YOUR CODE HERE
-
+    row = np.arange(1, n + 1)
+    return row[:, np.newaxis] * row
 
 # ANSWER: (the QUESTION is at the top of this file)

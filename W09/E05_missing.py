@@ -35,7 +35,7 @@ def count_missing(df):
     ...                                                     "bill_mm": 1}
     True
     """
-    return  # YOUR CODE HERE
+    return df.isna().sum().to_dict()
 
 
 def drop_missing(df, column):
@@ -46,7 +46,7 @@ def drop_missing(df, column):
     >>> drop_missing(PENGUINS, "bill_mm")["species"].tolist()
     ['Adelie', 'Gentoo', 'Gentoo', 'Chinstrap']
     """
-    return  # YOUR CODE HERE
+    return df.dropna(subset=[column])
 
 
 def fill_with_median(df, column):
@@ -66,7 +66,9 @@ def fill_with_median(df, column):
     >>> count_missing(PENGUINS)["mass_g"]
     2
     """
-    return  # YOUR CODE HERE
+    result = df.copy()
+    result[column] = result[column].fillna(result[column].median())
+    return result
 
 
 # ANSWER: (the QUESTION is at the top of this file)

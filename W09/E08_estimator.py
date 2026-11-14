@@ -41,7 +41,7 @@ def train(X, y, k):
     >>> hasattr(model, "X_")      # fitted, so it has remembered its data
     True
     """
-    return  # YOUR CODE HERE
+    return KNN(k=k).fit(X, y)
 
 
 def label_for(model, row):
@@ -63,7 +63,7 @@ def label_for(model, row):
     >>> label_for(train(X, Y, 3), [6.0])
     'stork'
     """
-    return  # YOUR CODE HERE
+    return str(model.predict([row])[0])
 
 
 def accuracy(model, X, y):
@@ -79,7 +79,7 @@ def accuracy(model, X, y):
     >>> accuracy(model, np.array([[3.1], [6.5]]), np.array(["stork", "swan"]))
     0.5
     """
-    return  # YOUR CODE HERE
+    return float(model.score(X, y))
 
 
 # Write it once yourself, then use the built-in for the rest of your life:

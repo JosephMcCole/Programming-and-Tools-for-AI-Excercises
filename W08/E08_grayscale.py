@@ -48,7 +48,7 @@ def to_gray(image):
     >>> round(float(to_gray(green)[0, 0]), 2)
     182.38
     """
-    return  # YOUR CODE HERE
+    return image @ WEIGHTS
 
 
 # Given: the picture. cmap="gray" tells imshow to read the single number per

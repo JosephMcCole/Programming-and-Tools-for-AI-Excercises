@@ -30,7 +30,7 @@ def column_list(df, name):
     >>> column_list(PENGUINS, "mass_g")
     [3750.0, 3250.0, 4500.0, 5700.0, 3500.0]
     """
-    return  # YOUR CODE HERE
+    return df[name].tolist()
 
 
 def heavier_than(df, grams):
@@ -48,4 +48,4 @@ def heavier_than(df, grams):
     >>> len(heavier_than(PENGUINS, 10000))
     0
     """
-    return  # YOUR CODE HERE
+    return df[df["mass_g"] > grams]

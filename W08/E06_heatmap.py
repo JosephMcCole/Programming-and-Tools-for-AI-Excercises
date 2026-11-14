@@ -42,8 +42,7 @@ def distance_matrix(X):
     array([[0., 3.],
            [3., 0.]])
     """
-    return  # YOUR CODE HERE
-
+    return cdist(X, X)
 
 # Given: the picture. imshow draws a 2-D array as an image, one pixel per
 # entry, with the values mapped onto a colour scale.

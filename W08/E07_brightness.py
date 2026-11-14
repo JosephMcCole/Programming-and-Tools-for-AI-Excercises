@@ -30,7 +30,7 @@ def brightness(image):
     >>> brightness(np.zeros((4, 4, 3), dtype=np.uint8))
     0.0
     """
-    return  # YOUR CODE HERE
+    return float(np.mean(image))
 
 
 def darkest_first(names, values):
@@ -44,7 +44,7 @@ def darkest_first(names, values):
     >>> darkest_first(["a", "b", "c"], [1.0, 2.0, 3.0])
     array(['a', 'b', 'c'], dtype='<U1')
     """
-    return  # YOUR CODE HERE
+    return np.array(names)[np.argsort(values)]
 
 
 def main():

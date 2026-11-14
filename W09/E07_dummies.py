@@ -49,8 +49,7 @@ def encode(df, column):
     >>> encode(PENGUINS, "island")["island_Dream"].tolist()
     [1, 0, 0, 0, 1]
     """
-    return  # YOUR CODE HERE
-
+    return pd.get_dummies(df, columns=[column], dtype=int)
 
 def n_new_columns(df, column):
     """How many columns would encoding `column` add, net of the one removed?
@@ -62,7 +61,7 @@ def n_new_columns(df, column):
     >>> n_new_columns(PENGUINS, "island")      # 2 islands, minus the original
     1
     """
-    return  # YOUR CODE HERE
+    return df[column].nunique() - 1
 
 
 # Write it once yourself, then use the built-in for the rest of your life:

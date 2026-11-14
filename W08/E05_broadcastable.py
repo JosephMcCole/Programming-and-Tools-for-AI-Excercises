@@ -33,5 +33,8 @@ def is_broadcastable(X, Y):
     >>> is_broadcastable(np.zeros((2, 3)), np.zeros((4, 3)))
     False
     """
-    return  # YOUR CODE HERE
+    for a, b in zip(X.shape[::-1], Y.shape[::-1]):
+        if a != b and a != 1 and b != 1:
+            return False
+    return True
 

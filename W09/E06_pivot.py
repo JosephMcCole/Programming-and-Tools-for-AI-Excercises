@@ -36,7 +36,7 @@ def wide(df, index, columns, values):
     >>> wide(RUNS, "metric", "setting", "accuracy").to_dict()
     {'norm off': {'euclidean': 0.75, 'manhattan': 0.7}, 'norm on': {'euclidean': 0.9, 'manhattan': 0.86}}
     """
-    return  # YOUR CODE HERE
+    return df.pivot_table(index=index, columns=columns, values=values)
 
 
 def best_by(df, group, column):
@@ -47,4 +47,4 @@ def best_by(df, group, column):
     >>> best_by(RUNS, "setting", "accuracy")
     'norm on'
     """
-    return  # YOUR CODE HERE
+    return df.groupby(group)[column].mean().idxmax()

@@ -26,7 +26,7 @@ def column_range(df, name):
     >>> print(*column_range(PENGUINS, "bill_mm"))
     39.1 50.0
     """
-    return  # YOUR CODE HERE
+    return (float(df[name].min()), float(df[name].max()))
 
 
 def column_mean(df, name):
@@ -37,7 +37,7 @@ def column_mean(df, name):
     >>> print(column_mean(PENGUINS, "bill_mm"))
     44.4
     """
-    return  # YOUR CODE HERE
+    return round(float(df[name].mean()), 2)
 
 
 def spread(df, name):
@@ -52,4 +52,4 @@ def spread(df, name):
     >>> print(spread(PENGUINS, "mass_g"))
     989.57
     """
-    return  # YOUR CODE HERE
+    return round(float(df[name].std()), 2)

@@ -25,7 +25,7 @@ def count_above(x, t):
     >>> count_above(x, 100)
     0
     """
-    return  # YOUR CODE HERE
+    return int(np.sum(x > t))
 
 
 def values_above(x, t):
@@ -37,7 +37,7 @@ def values_above(x, t):
     >>> values_above(x, 4)
     array([5, 9])
     """
-    return  # YOUR CODE HERE
+    return x[x > t]
 
 
 def column_means(X):
@@ -49,7 +49,7 @@ def column_means(X):
     >>> column_means(np.array([[10.0, 20.0]]))
     array([10., 20.])
     """
-    return  # YOUR CODE HERE
+    return np.mean(X, axis=0)
 
 
 def row_maxes(X):
@@ -61,4 +61,4 @@ def row_maxes(X):
     >>> row_maxes(np.array([[-1.0, -5.0]]))
     array([-1.])
     """
-    return  # YOUR CODE HERE
+    return np.max(X, axis=1)

@@ -30,7 +30,7 @@ def group_sizes(df, by):
     >>> group_sizes(PENGUINS, "island") == {"Biscoe": 3, "Dream": 2}
     True
     """
-    return  # YOUR CODE HERE
+    return df.groupby(by).size().to_dict()
 
 
 def group_means(df, by, column):
@@ -43,4 +43,4 @@ def group_means(df, by, column):
     ...                                                "Dream": 42.8}
     True
     """
-    return  # YOUR CODE HERE
+    return df.groupby(by)[column].mean().round(1).to_dict()
