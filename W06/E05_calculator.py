@@ -62,6 +62,7 @@ def fewest_presses(target):
     >>> fewest_presses(0)
     0
     """
+    #returns the length of presses minus 1 as 0 is counted in the presses
     return len(presses(target)) - 1
 
-# ANSWER: (the QUESTION is at the top of this file)
+# BFS will keep discovering new even numbers forever without ever reaching 101

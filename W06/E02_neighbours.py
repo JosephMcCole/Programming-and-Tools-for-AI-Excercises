@@ -27,6 +27,7 @@ def neighbours(graph, node):
     >>> neighbours(ROADS, "Dublin")
     []
     """
+    # returns a alphabetical list of safe nodes connections in the graph 
     return sorted(graph.get(node, []))
 
 
@@ -40,6 +41,8 @@ def is_edge(graph, a, b):
     >>> is_edge(ROADS, "Dublin", "Galway")
     False
     """
+    #returns a boolean value if b is in the results of the above neighbours function.
+    #so it will indiacate if there is an edge from a to b
     return b in neighbours(graph, a)
 
 
@@ -51,4 +54,5 @@ def degree(graph, node):
     >>> degree(RIVER_GRAPH, "LLLL")
     1
     """
+    #in this line of code the direct connections are collected and passed to the len function
     return len(neighbours(graph, node))

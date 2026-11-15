@@ -12,7 +12,7 @@ graph. That is how you find out how big a state space really is.
 """
 
 from collections import deque
-
+#First in first out deque functionality here, order of 1 capability
 from E01_river import ROADS, START, successors
 
 
@@ -35,16 +35,25 @@ def reachable(successors, start):
     >>> sorted(reachable(lambda n: {"a": "b", "b": "a", "c": ""}[n], "c"))
     ['c']
     """
-    visited = {start}
-    frontier = deque([start])
 
+    #Breadth first search
+    #visited is a set containing the starting state
+    #order of 1 which does require states be hashable
+    visited = {start}
+    #states are explored outward layer by layer in the frontier variable
+    frontier = deque([start])
+    #while there are non explored states in the queue which is denoted here by the frontier variable
     while frontier:
+        #assigning node to the left sides state that has been waiting longest in the queue
         node = frontier.popleft()
+        #for each neighbour a single move from node 
         for neighbour in successors(node):
+            #if the neighbour is not in visited add to visited and for the purposes of the loop
+            #add to frontier at the end so it can be explored later
             if neighbour not in visited:
                 visited.add(neighbour)
                 frontier.append(neighbour)
-
+    #returning the visited nodes
     return visited
 
 
@@ -60,4 +69,5 @@ def connected(successors, a, b):
     >>> connected(successors, "LLLL", "LLRR")
     False
     """
+    #returns boolean answer if there is a route from a to b
     return b in reachable(successors, a)

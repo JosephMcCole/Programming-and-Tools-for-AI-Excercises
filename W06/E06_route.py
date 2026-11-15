@@ -28,7 +28,10 @@ def time_lost(start, goal):
     >>> time_lost("Galway", "Galway")
     0
     """
+    #this function compares BFS and dijkstra
+    #BFS ignores edge weights and treats every road segment as having an equal cost of 1
     bfs_route = bfs_graph(ROADS, start, goal)
+    #find the lowest total weight of driving times from start to goal using dijkstras algorithm
     quickest_cost, _ = dijkstra(roads_from, start, goal)
     return road_time(bfs_route) - quickest_cost
 
@@ -49,7 +52,4 @@ def quickest_times(start):
     >>> quickest_times("Clifden")["Galway"]
     72
     """
-    return {
-        town: dijkstra(roads_from, start, town)[0]
-        for town in ROADS
-    }
+    return
