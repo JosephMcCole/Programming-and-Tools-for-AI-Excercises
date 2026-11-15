@@ -51,4 +51,5 @@ def heavier_than(df, grams):
     >>> len(heavier_than(PENGUINS, 10000))
     0
     """
+    #filters dataframe keeping only the rows where the condition evaluates to True
     return df[df["mass_g"] > grams]

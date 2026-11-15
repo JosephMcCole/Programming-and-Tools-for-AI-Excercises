@@ -3,7 +3,7 @@
 Run the tests:
 
     python -m doctest W09/E06_pivot.py
-
+    
 No output means every test passed.
 
 This is the step the lecture program takes at the end. Results come out of
@@ -47,4 +47,5 @@ def best_by(df, group, column):
     >>> best_by(RUNS, "setting", "accuracy")
     'norm on'
     """
+    #idxmax returns the index label corresponding to the maximum mean value, rather than the numeric value itself.
     return df.groupby(group)[column].mean().idxmax()

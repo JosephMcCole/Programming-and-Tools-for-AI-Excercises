@@ -26,6 +26,7 @@ def column_range(df, name):
     >>> print(*column_range(PENGUINS, "bill_mm"))
     39.1 50.0
     """
+    #returns the float values of the min and max of a column as a tuple
     return (float(df[name].min()), float(df[name].max()))
 
 

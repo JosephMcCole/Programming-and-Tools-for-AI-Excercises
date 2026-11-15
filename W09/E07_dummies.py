@@ -49,6 +49,8 @@ def encode(df, column):
     >>> encode(PENGUINS, "island")["island_Dream"].tolist()
     [1, 0, 0, 0, 1]
     """
+    #ML methods require numeric inputs rather than strings
+    #pd.get_dummies performs one-hot encoding, replacing column with one 0/1 column per category
     return pd.get_dummies(df, columns=[column], dtype=int)
 
 def n_new_columns(df, column):
@@ -61,6 +63,8 @@ def n_new_columns(df, column):
     >>> n_new_columns(PENGUINS, "island")      # 2 islands, minus the original
     1
     """
+    #nunique counts the distinct categories in the series
+    #minus 1 because the original categorical column is dropped
     return df[column].nunique() - 1
 
 

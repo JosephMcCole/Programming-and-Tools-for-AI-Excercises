@@ -66,9 +66,12 @@ def fill_with_median(df, column):
     >>> count_missing(PENGUINS)["mass_g"]
     2
     """
+    #creating a copy of the df 
     result = df.copy()
     result[column] = result[column].fillna(result[column].median())
     return result
 
 
-# ANSWER: (the QUESTION is at the top of this file)
+#guessing a missing measurement using a summary statistic like the mean or median provides a
+#good way of filling missing values when it is suitable. however when guessing a value of output value y 
+#it is not a suitable practice to guess the values as it would skew results
