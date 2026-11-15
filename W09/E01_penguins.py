@@ -107,7 +107,7 @@ METRICS = {"euclidean": "euclidean",
            "manhattan": "cityblock",
            "chebyshev": "chebyshev"}
 
-SEED = 0
+SEED = 25252895
 # Deliberately not equal. 5 and 5 would give "5 folds, 5 repeats, 25
 # scores", and every one of those numbers could be mistaken for another.
 SPLITS, REPEATS = 5, 6          # 30 scores per cell: see protocol() below
