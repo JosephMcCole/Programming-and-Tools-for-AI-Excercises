@@ -80,6 +80,8 @@ def dtw_symbols(a, b):
     return dp[m][n]
 
 
-# ANSWER 1: (the QUESTION is at the top of this file)
+#instead of measuring how close the numbers are, it just blindly returns the length of the longer
+#list regardless of the values inside. no tol does not really fix the issue. It ignores how big the error in differences is 
 
-# ANSWER 2: (the QUESTION is at the top of this file)
+#DTW has no insertion/deletion penalty. It stretchs a letter to match consecutive identical letters fro free
+#Because it ignores repeated letters, DTW fails as a general spellchecker

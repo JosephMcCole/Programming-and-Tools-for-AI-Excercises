@@ -18,9 +18,12 @@ def fib_table(n):
     >>> fib_table(35)
     9227465
     """
+    #start at zero and one, the first two fib numbers
     table = [0, 1]
+    #_ as we do not need a loop counter in the loop
     for _ in range(2, n + 1):
         table.append(table[-1] + table[-2])
+    #return the final answer at index n
     return table[n]
 
 
@@ -34,9 +37,13 @@ def fib_pair(n):
     >>> all(fib_pair(i) == fib_table(i) for i in range(50))
     True
     """
+    #tracks the two most recent cases and it will not lookfuther backe than 0 and 1
     a, b = 0, 1
+    #again not not need a loop counter in the loop
     for _ in range(n):
+    #advance both values in the fib sequence
         a, b = b, a + b
+    #return the a value
     return a
 
 

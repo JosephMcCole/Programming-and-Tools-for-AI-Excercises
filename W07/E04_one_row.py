@@ -39,8 +39,10 @@ def levenshtein_row(a, b):
     >>> all(levenshtein_row(a, b) == levenshtein(a, b) for a, b in pairs)
     True
     """
+
     prev = list(range(len(b) + 1))
     for i, ca in enumerate(a, start=1):
+        #base case for column 0 reducing the first i characters of 'a' to empty takes i deletions
         curr = [i] + [0] * len(b)
         for j, cb in enumerate(b, start=1):
             cost = 0 if ca == cb else 1

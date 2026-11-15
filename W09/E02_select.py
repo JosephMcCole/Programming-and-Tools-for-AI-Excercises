@@ -30,6 +30,9 @@ def column_list(df, name):
     >>> column_list(PENGUINS, "mass_g")
     [3750.0, 3250.0, 4500.0, 5700.0, 3500.0]
     """
+    #indexing a DataFrame by column name works
+    #it extracts a single column as a pandas Series
+    #tolist() then strips away the index labels and converts the Series into a standard Python list.
     return df[name].tolist()
 
 

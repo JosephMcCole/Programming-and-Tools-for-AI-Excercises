@@ -40,6 +40,8 @@ def combine(A, b, c, d):
     array([[  2.,   3., 104.],
            [ 15.,  16., 117.]])
     """
+    #for b it reshapes (n,) to (n, 1) to stretch across columns
+    #c needs no reshaping as it right-aligns and pads to (1, m) to stretch down rows
     return A + b[:, np.newaxis] + c + d
 
 

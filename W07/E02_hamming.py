@@ -22,11 +22,10 @@ def hamming(a, b):
     >>> hamming("ACGTACGTAC", "CGTACGTACA")
     10
     """
-    sentinel = object()
-    return sum(
-        1 for x, y in zip_longest(a, b, fillvalue=sentinel)
-        if x is not sentinel and y is not sentinel and x != y
-    )
+    #pair elements at matching indices for a and b
+    #x!=y evaluates to true or 1 for each mismatch and the sum function sums the mismatchs
+    #zip stops at eh shorter distance
+    return sum(x != y for x, y in zip(a, b))
 
 
 def hamming_padded(a, b):
@@ -41,7 +40,11 @@ def hamming_padded(a, b):
     >>> hamming_padded("abc", "")
     3
     """
-    return sum(x != y for x, y in zip_longest(a, b, fillvalue=object()))
+    #pair each element in a and b again
+    #but this time use ziplongest which pads the shorter distance with none
+    #so a mismatch with none and a value will equate to true and be 
+    #considered in the sum function
+    return sum(x != y for x, y in zip_longest(a, b))
 
 
 # `zip` stops at the shorter of the two, so `hamming` silently ignores

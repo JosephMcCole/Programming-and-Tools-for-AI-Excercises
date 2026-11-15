@@ -42,6 +42,7 @@ def distance_matrix(X):
     array([[0., 3.],
            [3., 0.]])
     """
+    #computes all-pairs Euclidean distances at once
     return cdist(X, X)
 
 # Given: the picture. imshow draws a 2-D array as an image, one pixel per
@@ -76,4 +77,4 @@ if __name__ == "__main__":
     main()
 
 
-# ANSWER: (the QUESTION is at the top of this file)
+# The main diagonal entries represent each photo's Euclidean distance to itself which is 0

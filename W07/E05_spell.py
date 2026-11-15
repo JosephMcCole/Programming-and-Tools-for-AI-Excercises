@@ -35,6 +35,7 @@ def suggest(word, words, n=3):
     >>> suggest("cat", [])
     []
     """
+    #returns the sorted list of suggested words based on the levenshtein difference adn slices the liust at n which is set to 3
     return sorted(words, key=lambda w: levenshtein(word, w))[:n]
 
 

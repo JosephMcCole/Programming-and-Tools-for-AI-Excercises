@@ -25,6 +25,7 @@ def count_above(x, t):
     >>> count_above(x, 100)
     0
     """
+    #x > t creates a boolean mask of true/false, np.sum counts the Trues
     return int(np.sum(x > t))
 
 
@@ -37,6 +38,7 @@ def values_above(x, t):
     >>> values_above(x, 4)
     array([5, 9])
     """
+    #indexing the array with the boolean mask, x > t selects only the True elements
     return x[x > t]
 
 
@@ -49,6 +51,7 @@ def column_means(X):
     >>> column_means(np.array([[10.0, 20.0]]))
     array([10., 20.])
     """
+    #summarises down the columns (axis 0 vanishes, leaving one mean per column)
     return np.mean(X, axis=0)
 
 
@@ -61,4 +64,5 @@ def row_maxes(X):
     >>> row_maxes(np.array([[-1.0, -5.0]]))
     array([-1.])
     """
+    #summarises along the rows (axis 1 vanishes, leaving one max per row)
     return np.max(X, axis=1)

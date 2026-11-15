@@ -30,6 +30,7 @@ def brightness(image):
     >>> brightness(np.zeros((4, 4, 3), dtype=np.uint8))
     0.0
     """
+    #Calling np.mean without an axis summarises across all axes at once, returning a single number
     return float(np.mean(image))
 
 

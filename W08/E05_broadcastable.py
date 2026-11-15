@@ -33,7 +33,10 @@ def is_broadcastable(X, Y):
     >>> is_broadcastable(np.zeros((2, 3)), np.zeros((4, 3)))
     False
     """
+    #reverse both shapes to line them up at the right-hand end, zip stops at the
+    #shorter shape, mimicking padding the shorter one with 1s on the left
     for a, b in zip(X.shape[::-1], Y.shape[::-1]):
+        #2 aligned axes are compatible only if they are equal or either is 1
         if a != b and a != 1 and b != 1:
             return False
     return True

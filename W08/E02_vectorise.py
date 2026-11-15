@@ -39,6 +39,8 @@ def softplus(x):
     >>> np.round(softplus(np.array([-2.0, 0.0, 2.0, 5.0])), 3)
     array([0.127, 0.693, 2.127, 5.007])
     """
+    #vectorisation applies exp and log element-by-element,
+    #while broadcasting stretches the scalar 1 across the array in fast compiled C.
     return np.log(1 + np.exp(x))
 
 # Given: the plot. Notice that it never loops: linspace makes 200 x values,
